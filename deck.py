@@ -9,7 +9,7 @@ class Deck:
 
         # makes deck as soon as obj is made
         self._make_deck()
-
+    
     def _make_deck(self):
         self.deck = [Card(suit, self.face[f]) if f in self.face else [Card(suit, f)]for suit in self.suits for f in range(1,14)]
 
@@ -19,3 +19,6 @@ class Deck:
     # for when you want to print deck
     def __repr__(self):
         return self.deck
+    
+    def deal_card(self):
+        return self.deck.pop
